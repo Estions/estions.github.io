@@ -1,83 +1,56 @@
 // Custom.scss
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
 
-$textColorD : #FFF2E6FF;
-$bgColorD   : #1A001AFF;
-$textColorB : #1A001AFF;
-$bgColorB   : #FFF2E6FF;
-$textColorI : #696773FF;
+$no-color : #00000000 ;
+$nav-button-nhover-text : #C97D60FF;
+$nav-button-nhover : #63372CFF;
+$nav-button-yhover-text : #63372CFF;
+$nav-button-yhover : #C97D60FF;
 
-.header{
-    font-family : 'Oxanium', cursive;  
-    font-weight: 400;
-    margin-top: 0.25vw;
-    margin-bottom: 0.25vw;
+body{
+    padding: 0px;
+    margin: 0px;
 }
 
-.grid_content{
-    grid-area: grid_content;
+.page-hdr{
+    display: inline-flex;
+    padding: 0px;
+    margin: 0px;
+
+    font-size: 12px;
+    font-family: 'Oxanium';
+    font-style: normal;
+    font-weight: 300;
 }
 
-.bg-col-D{
-    background-color: $bgColorD;
+.page-nav{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    display: inline-flex;
+    float: right;
 }
 
-.bg-col-B{
-    background-color: $bgColorB;
+.nav-btn{
+    display: inline-flex;
+
+    padding: 2px;
+    margin: 4px;
+
+    transition-duration: 0.3s;
+    background-color: $nav-button-nhover;
+    border: 2px solid $nav-button-nhover;
+    color: $nav-button-nhover-text;
 }
 
-.txt-col-D{
-    color: $textColorD;
+.nav-btn:hover{
+    transition-duration: 0.3s;
+    background-color: $no-color;
+    border-color: $nav-button-yhover;
+    color: $nav-button-yhover-text;
+    transform: scale(1.1);
 }
-
-.txt-col-B{
-    color: $textColorB;
-}
-
-.grid_nav_mob{
-    padding: 8px;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    grid-area: grid_nav;
-}
-
-.grid_nav_desk{
-    display: none;
-    float:right;
-    grid-area: grid_nav;
-}
-
-.grid_header{
-    padding: 1vw;
-    grid-area: grid_header;
-}
-
-body {
-    margin: 0;
-}
-
-.grid_container {
-    margin: 0 ;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 90vw auto;
-    grid-template-areas: 
-    "grid_header grid_nav"
-    "grid_content grid_content";
-}
-
 @media screen and (min-width: 600px) {
-    .grid_nav_mob{
-        display: none;
-    }
 
-    .grid_nav_desk{
-        display: inline-block;
-    }
-
-    .grid_container{
-        grid-template-columns: auto auto;
-    }
 }
 
