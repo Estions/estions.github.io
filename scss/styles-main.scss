@@ -1,54 +1,66 @@
 // Custom.scss
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
 
-$no-color : #00000000 ;
-$nav-button-nhover-text : #C97D60FF;
-$nav-button-nhover : #63372CFF;
-$nav-button-yhover-text : #63372CFF;
-$nav-button-yhover : #C97D60FF;
+$no-color :                  #00000000 ;
+$nav-button-nhover-text :    #FFFAFFFF;
+$nav-button-nhover :         #303036FF;
+$nav-button-yhover-text :    #303036FF;
+$nav-button-yhover :         #FFFAFFFF;
+$header-gradient :           linear-gradient(60deg, #7B1E7AFF, #B33F62FF, #F9564FFF);
 
 body{
-    padding: 0px;
-    margin: 0px;
+    background-image:       url("/images/body-bg.jpg");
+    padding:                0px;
+    margin:                 0px;
+}
+
+header{
+    background-image:       $header-gradient;
+    background-repeat:      no-repeat;
+    background-size:        100%;
 }
 
 .page-hdr{
-    display: inline-flex;
-    padding: 0px;
-    margin: 0px;
+    display:                inline-flex;
+    padding:                0px;
+    margin:                 0px;
 
-    font-size: 12px;
-    font-family: 'Oxanium';
-    font-style: normal;
-    font-weight: 300;
+    font-size:              12px;
+    font-family:            'Oxanium';
+    font-style:             normal;
+    font-weight:            300;
+    
+    user-select:            none;
 }
 
 .page-nav{
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
-    display: inline-flex;
-    float: right;
+    padding:                0px;
+    margin:                 0px;
+    list-style:             none;
+    display:                inline-flex;
+    float:                  right;
 }
 
 .nav-btn{
-    display: inline-flex;
+    display:                inline-flex;
 
-    padding: 2px;
-    margin: 4px;
+    padding:                1px;
+    margin:                 3px;
 
-    transition-duration: 0.3s;
-    background-color: $nav-button-nhover;
-    border: 2px solid $nav-button-nhover;
-    color: $nav-button-nhover-text;
+    transition-duration:    0.3s;
+    background-color:       $nav-button-nhover;
+    border:                 2px solid $nav-button-nhover;
+    color:                  $nav-button-nhover-text;
+    cursor:                 pointer;
 }
 
 .nav-btn:hover{
-    transition-duration: 0.3s;
-    background-color: $no-color;
-    border-color: $nav-button-yhover;
-    color: $nav-button-yhover-text;
-    transform: scale(1.1);
+    transition-duration:    0.3s;
+    background-color:       $nav-button-yhover;
+    border-color:           $nav-button-yhover;
+    color:                  $nav-button-yhover-text;
+    cursor:                 pointer;
+    transform:              scale(1.05);
 }
 @media screen and (min-width: 600px) {
 
