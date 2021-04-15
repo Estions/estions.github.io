@@ -9,7 +9,6 @@ $nav-button-yhover :         #FFFAFFFF;
 $header-gradient :           linear-gradient(60deg, #7B1E7AFF, #B33F62FF, #F9564FFF);
 
 body{
-    background-image:       url("/images/body-bg.jpg");
     padding:                0px;
     margin:                 0px;
 }
@@ -17,7 +16,7 @@ body{
 header{
     background-image:       $header-gradient;
     background-repeat:      no-repeat;
-    background-size:        100%;
+    background-size:        cover;
 }
 
 .page-hdr{
@@ -25,7 +24,7 @@ header{
     padding:                0px;
     margin:                 0px;
 
-    font-size:              12px;
+    font-size:              36px;
     font-family:            'Oxanium';
     font-style:             normal;
     font-weight:            300;
@@ -45,7 +44,9 @@ header{
     display:                inline-flex;
 
     padding:                1px;
-    margin:                 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin:                 8px;
 
     transition-duration:    0.3s;
     background-color:       $nav-button-nhover;

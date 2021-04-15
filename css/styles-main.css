@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap");
 body {
-  background-image: url("/images/body-bg.jpg");
   padding: 0px;
   margin: 0px;
 }
@@ -8,7 +7,7 @@ body {
 header {
   background-image: linear-gradient(60deg, #7B1E7AFF, #B33F62FF, #F9564FFF);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .page-hdr {
@@ -17,7 +16,7 @@ header {
   display: inline-flex;
   padding: 0px;
   margin: 0px;
-  font-size: 12px;
+  font-size: 36px;
   font-family: 'Oxanium';
   font-style: normal;
   font-weight: 300;
@@ -42,7 +41,9 @@ header {
   display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 1px;
-  margin: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 8px;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
   background-color: #303036FF;
