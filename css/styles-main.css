@@ -1,65 +1,153 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap");
 body {
-  padding: 0px;
   margin: 0px;
+  padding: 0px;
+}
+
+div.gridContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 12vw auto;
+      grid-template-columns: 12vw auto;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "header nav" "main main" "footer footer";
+  background-color: #a0c4ffff;
+}
+
+nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #9bf6ffff;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: nav;
+}
+
+nav.desktop {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav.mobile {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: none;
 }
 
 header {
-  background-image: linear-gradient(60deg, #7B1E7AFF, #B33F62FF, #F9564FFF);
-  background-repeat: no-repeat;
-  background-size: cover;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  background-color: #caffbfff;
 }
 
-.page-hdr {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: 0px;
-  margin: 0px;
-  font-size: 36px;
-  font-family: 'Oxanium';
-  font-style: normal;
-  font-weight: 300;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+  background-color: #fdffb6ff;
 }
 
-.page-nav {
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+  background-color: #ffd6a5ff;
+}
+
+ul.navbar {
   padding: 0px;
   margin: 0px;
   list-style: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  float: right;
 }
 
-.nav-btn {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: 1px;
-  padding-left: 4px;
-  padding-right: 4px;
-  margin: 8px;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  background-color: #303036FF;
-  border: 2px solid #303036FF;
-  color: #FFFAFFFF;
-  cursor: pointer;
+p.header_text {
+  padding: 0px;
+  margin: 0px;
+  color: #1D3557FF;
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-size: 36px;
+  font-weight: 400;
 }
 
-.nav-btn:hover {
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  background-color: #FFFAFFFF;
-  border-color: #FFFAFFFF;
-  color: #303036FF;
-  cursor: pointer;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+.button {
+  padding: 1vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  background-color: #fffffcff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+  div.gridContainer {
+    -ms-grid-columns: auto 8vw;
+        grid-template-columns: auto 8vw;
+    -ms-grid-rows: 12vh auto;
+        grid-template-rows: 12vh auto;
+  }
+  nav.desktop {
+    display: none;
+  }
+  nav.mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.gridContainer {
+    -ms-grid-columns: auto 8vw;
+        grid-template-columns: auto 8vw;
+    -ms-grid-rows: 8vh auto;
+        grid-template-rows: 8vh auto;
+  }
+  nav.desktop {
+    display: none;
+  }
+  nav.mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0px;
+  }
 }
 /*# sourceMappingURL=styles-main.css.map */

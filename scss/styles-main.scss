@@ -1,69 +1,138 @@
 // Custom.scss
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
 
+$debug1: #ffadadff;
+$debug2: #ffd6a5ff;
+$debug3: #fdffb6ff;
+$debug4: #caffbfff;
+$debug5: #9bf6ffff;
+$debug6: #a0c4ffff;
+$debug7: #bdb2ffff;
+$debug8: #ffc6ffff;
+$debug9: #fffffcff;
+
 $no-color :                  #00000000 ;
-$nav-button-nhover-text :    #FFFAFFFF;
-$nav-button-nhover :         #303036FF;
-$nav-button-yhover-text :    #303036FF;
-$nav-button-yhover :         #FFFAFFFF;
+$nav-button-nhover-text :    #1D3557FF;
+$nav-button-nhover :         #F1FAEEFF;
+$nav-button-yhover-text :    #F1FAEEFF;
+$nav-button-yhover :         #1D3557FF;
 $header-gradient :           linear-gradient(60deg, #7B1E7AFF, #B33F62FF, #F9564FFF);
 
 body{
-    padding:                0px;
-    margin:                 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+div.gridContainer{
+    display: grid;
+	grid-template-columns: 12vw auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header nav"
+    "main main"
+    "footer footer";
+    background-color: $debug6;
+}
+
+nav{
+    align-items:center;
+    background-color: $debug5;
+    grid-area: nav;
+}
+
+nav.desktop{
+    justify-content:flex-end;
+    display: flex;
+}
+
+nav.mobile{
+    justify-content:center;
+    display: none;
 }
 
 header{
-    background-image:       $header-gradient;
-    background-repeat:      no-repeat;
-    background-size:        cover;
+    align-items:center;
+    justify-content:center;
+    display: flex;
+    grid-area: header;
+    background-color: $debug4;
 }
 
-.page-hdr{
-    display:                inline-flex;
-    padding:                0px;
-    margin:                 0px;
+main{
+    display: flex;
+    grid-area: main;
+    background-color: $debug3;
+}
 
-    font-size:              36px;
-    font-family:            'Oxanium';
-    font-style:             normal;
-    font-weight:            300;
+footer{
+    display: flex;
+    grid-area: footer;
+    background-color: $debug2;
+}
+
+ul.navbar{
+    padding: 0px;
+    margin: 0px;
+
+    list-style: none;
+    display: inline-flex;
+}
+
+p.header_text{
+    padding: 0px;
+    margin: 0px;
+
+    color: $nav-button-nhover-text;
+
+    font-family: 'Oxanium';
+    font-style: normal;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.button{
+    padding: 1vh;
+
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+    background-color: $debug9;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@media screen and (max-width: 425px) {
+    div.gridContainer{
+        grid-template-columns: auto 8vw;
+        grid-template-rows: 12vh auto;
+    }
+
+    nav.desktop{
+        display: none;
+    }
     
-    user-select:            none;
+    nav.mobile{
+        display: flex;
+    }
 }
 
-.page-nav{
-    padding:                0px;
-    margin:                 0px;
-    list-style:             none;
-    display:                inline-flex;
-    float:                  right;
-}
+@media screen and (max-width: 768px) {
+    div.gridContainer{
+        grid-template-columns: auto 8vw;
+        grid-template-rows: 8vh auto;
+    }
 
-.nav-btn{
-    display:                inline-flex;
-
-    padding:                1px;
-    padding-left: 4px;
-    padding-right: 4px;
-    margin:                 8px;
-
-    transition-duration:    0.3s;
-    background-color:       $nav-button-nhover;
-    border:                 2px solid $nav-button-nhover;
-    color:                  $nav-button-nhover-text;
-    cursor:                 pointer;
-}
-
-.nav-btn:hover{
-    transition-duration:    0.3s;
-    background-color:       $nav-button-yhover;
-    border-color:           $nav-button-yhover;
-    color:                  $nav-button-yhover-text;
-    cursor:                 pointer;
-    transform:              scale(1.05);
-}
-@media screen and (min-width: 600px) {
-
+    nav.desktop{
+        display: none;
+    }
+    
+    nav.mobile{
+        display: flex;
+        padding: 0px;
+    }
 }
 
