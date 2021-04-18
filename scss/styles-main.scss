@@ -1,138 +1,72 @@
 // Custom.scss
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
 
-$debug1: #ffadadff;
-$debug2: #ffd6a5ff;
-$debug3: #fdffb6ff;
-$debug4: #caffbfff;
-$debug5: #9bf6ffff;
-$debug6: #a0c4ffff;
-$debug7: #bdb2ffff;
-$debug8: #ffc6ffff;
-$debug9: #fffffcff;
+$color-text-nohover : #BE7DDCFF;
+$color-text-hover   : #FFE4F8FF;
 
-$no-color :                  #00000000 ;
-$nav-button-nhover-text :    #1D3557FF;
-$nav-button-nhover :         #F1FAEEFF;
-$nav-button-yhover-text :    #F1FAEEFF;
-$nav-button-yhover :         #1D3557FF;
-$header-gradient :           linear-gradient(60deg, #7B1E7AFF, #B33F62FF, #F9564FFF);
+$color-border-nohover : #00000000;
+$color-border-hover : #FF76BAFF;
+
+$color-bg-nohover : #16151CFF;
+$color-bg-hover : #00000000;
+
+$color-bg-passive : #16151CFF;
 
 body{
     margin: 0px;
     padding: 0px;
 }
 
-div.gridContainer{
-    display: grid;
-	grid-template-columns: 12vw auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "header nav"
-    "main main"
-    "footer footer";
-    background-color: $debug6;
-}
-
-nav{
-    align-items:center;
-    background-color: $debug5;
-    grid-area: nav;
-}
-
-nav.desktop{
-    justify-content:flex-end;
+.header{
     display: flex;
+    background-color: $color-bg-passive;
 }
 
-nav.mobile{
+.header > *{
+    display:flex;
+
     justify-content:center;
-    display: none;
-}
-
-header{
     align-items:center;
-    justify-content:center;
-    display: flex;
-    grid-area: header;
-    background-color: $debug4;
+    width: 100%;
 }
 
-main{
-    display: flex;
-    grid-area: main;
-    background-color: $debug3;
-}
-
-footer{
-    display: flex;
-    grid-area: footer;
-    background-color: $debug2;
-}
-
-ul.navbar{
-    padding: 0px;
-    margin: 0px;
-
-    list-style: none;
-    display: inline-flex;
-}
-
-p.header_text{
-    padding: 0px;
-    margin: 0px;
-
-    color: $nav-button-nhover-text;
-
-    font-family: 'Oxanium';
-    font-style: normal;
-    font-size: 36px;
-    font-weight: 400;
-}
-
-.button{
-    padding: 1vh;
+.header-button{
+    transition-duration: 0.1s;
+    
+    border : 2px solid $color-border-nohover;
 
     margin-left: 1vw;
     margin-right: 1vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 
-    background-color: $debug9;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background-color: $color-bg-nohover;
 }
 
-@media screen and (max-width: 425px) {
-    div.gridContainer{
-        grid-template-columns: auto 8vw;
-        grid-template-rows: 12vh auto;
-    }
-
-    nav.desktop{
-        display: none;
-    }
+.header-button:hover{
+    transition-duration: 0.1s;
     
-    nav.mobile{
-        display: flex;
-    }
+    transform: scale(1.05);
+
+    border : 2px solid $color-border-hover;
+
+    background-color: $color-bg-hover;
+
+    cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    div.gridContainer{
-        grid-template-columns: auto 8vw;
-        grid-template-rows: 8vh auto;
-    }
-
-    nav.desktop{
-        display: none;
-    }
-    
-    nav.mobile{
-        display: flex;
-        padding: 0px;
-    }
+.header-button:hover > .header-text{
+    color: $color-text-hover;
 }
 
+.header-text{
+    margin: 0px;
+    font-family: 'Oxanium';
+    font-size: 3vw;
+    color: $color-text-nohover;
+}
