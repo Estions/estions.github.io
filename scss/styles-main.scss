@@ -70,10 +70,32 @@ body {
 
 .header-button:hover{
     background-color: $light-accent-300;
+    cursor:pointer;
     >.header-text{
         color: $light-shades-300;
     }
     >.material-icons{
         color: $light-shades-300;
     }
+}
+
+.filler-container{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    display: flex;
+    background-color: purple;
+    width: 69vw;
+    height: 6vh;
+}
+
+@media screen and (max-width:460px) {
+    .header-button {
+        >.material-icons{
+            font-size: 2vh;
+        }
+        >.header-text{
+            font-size: 2vh;
+        }
+    }
+
 }

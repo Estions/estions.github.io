@@ -63,6 +63,7 @@ body {
 
 .header-button:hover {
   background-color: #83bb3e;
+  cursor: pointer;
 }
 
 .header-button:hover > .header-text {
@@ -71,5 +72,25 @@ body {
 
 .header-button:hover > .material-icons {
   color: #eef2ed;
+}
+
+.filler-container {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: purple;
+  width: 69vw;
+  height: 6vh;
+}
+
+@media screen and (max-width: 460px) {
+  .header-button > .material-icons {
+    font-size: 2vh;
+  }
+  .header-button > .header-text {
+    font-size: 2vh;
+  }
 }
 /*# sourceMappingURL=styles-main.css.map */
