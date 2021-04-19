@@ -1,72 +1,79 @@
 // Custom.scss
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap");
 
-$color-text-nohover : #BE7DDCFF;
-$color-text-hover   : #FFE4F8FF;
+//#hue/#saturation/$vibrance
 
-$color-border-nohover : #00000000;
-$color-border-hover : #FF76BAFF;
+//Light Shades
+$light-shades-300 : hsl(108, 16%, 94%);
 
-$color-bg-nohover : #16151CFF;
-$color-bg-hover : #00000000;
+//Light Accent
+$light-accent-300 : hsl(87, 50%, 49%);
 
-$color-bg-passive : #16151CFF;
+//Main Color
+$main-color-300 : hsl(192, 20%, 60%);
 
-body{
+//Dark Accent
+$dark-accent-300 : hsl(211, 9%, 52%);
+
+//Dark Shades
+$dark-shades-300 : hsl(216, 21%, 18%);
+
+body {
     margin: 0px;
     padding: 0px;
+
+    background-color: $dark-shades-300;
 }
 
-.header{
+.header {
     display: flex;
-    background-color: $color-bg-passive;
+    justify-content: space-between;
 }
 
-.header > *{
-    display:flex;
+.header-button {
+    transition-duration: 125ms;
 
+    display: flex;
     justify-content:center;
     align-items:center;
-    width: 100%;
-}
 
-.header-button{
-    transition-duration: 0.1s;
-    
-    border : 2px solid $color-border-nohover;
+    width: 23vw;
+    height: 6vh;
 
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     margin-left: 1vw;
     margin-right: 1vw;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
 
-    padding-left: 1vw;
-    padding-right: 1vw;
-    padding-top: 0.5vh;
-    padding-bottom: 0.5vh;
+    border: 0px solid transparent;
+    border-radius: 3vh;
 
-    background-color: $color-bg-nohover;
+    background-color: $light-shades-300;
+
+    >.material-icons{
+        user-select: none;
+        color: $dark-shades-300;
+        font-size: 2vw;
+    }
+    >.header-text{
+        user-select: none;
+        color: $dark-shades-300;
+        font-family: 'Oxanium';
+        font-weight: 500;
+        font-size: 2vw;
+    }
+
+    &.compact {
+        width: 6vh;
+    }
 }
 
 .header-button:hover{
-    transition-duration: 0.1s;
-    
-    transform: scale(1.05);
-
-    border : 2px solid $color-border-hover;
-
-    background-color: $color-bg-hover;
-
-    cursor: pointer;
-}
-
-.header-button:hover > .header-text{
-    color: $color-text-hover;
-}
-
-.header-text{
-    margin: 0px;
-    font-family: 'Oxanium';
-    font-size: 3vw;
-    color: $color-text-nohover;
+    background-color: $light-accent-300;
+    >.header-text{
+        color: $light-shades-300;
+    }
+    >.material-icons{
+        color: $light-shades-300;
+    }
 }

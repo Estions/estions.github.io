@@ -2,16 +2,21 @@
 body {
   margin: 0px;
   padding: 0px;
+  background-color: #242c38;
 }
 
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #16151CFF;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.header > * {
+.header-button {
+  -webkit-transition-duration: 125ms;
+          transition-duration: 125ms;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,42 +26,50 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-}
-
-.header-button {
-  -webkit-transition-duration: 0.1s;
-          transition-duration: 0.1s;
-  border: 2px solid #00000000;
+  width: 23vw;
+  height: 6vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   margin-left: 1vw;
   margin-right: 1vw;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-top: 0.5vh;
-  padding-bottom: 0.5vh;
-  background-color: #16151CFF;
+  border: 0px solid transparent;
+  border-radius: 3vh;
+  background-color: #eef2ed;
+}
+
+.header-button > .material-icons {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #242c38;
+  font-size: 2vw;
+}
+
+.header-button > .header-text {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #242c38;
+  font-family: 'Oxanium';
+  font-weight: 500;
+  font-size: 2vw;
+}
+
+.header-button.compact {
+  width: 6vh;
 }
 
 .header-button:hover {
-  -webkit-transition-duration: 0.1s;
-          transition-duration: 0.1s;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  border: 2px solid #FF76BAFF;
-  background-color: #00000000;
-  cursor: pointer;
+  background-color: #83bb3e;
 }
 
 .header-button:hover > .header-text {
-  color: #FFE4F8FF;
+  color: #eef2ed;
 }
 
-.header-text {
-  margin: 0px;
-  font-family: 'Oxanium';
-  font-size: 3vw;
-  color: #BE7DDCFF;
+.header-button:hover > .material-icons {
+  color: #eef2ed;
 }
 /*# sourceMappingURL=styles-main.css.map */
