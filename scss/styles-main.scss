@@ -3,99 +3,207 @@
 
 //#hue/#saturation/$vibrance
 
-//Light Shades
-$light-shades-300 : hsl(108, 16%, 94%);
+//Transparent
+$transparent : #00000000;
 
-//Light Accent
-$light-accent-300 : hsl(87, 50%, 49%);
+//Website Colors
+$primary-100: #F6F7EB;
+$primary-200: #D1D8C8;
+$primary-300: #AABBA8;
+$primary-400: #829F8C;
+$primary-500: #598374;
+$primary-600: #2E6860;
 
-//Main Color
-$main-color-300 : hsl(192, 20%, 60%);
+$secondary-100: #E94F37;
+$secondary-200: #C62E1D;
+$secondary-300: #A30003;
+$secondary-400: #810000;
+$secondary-500: #620000;
 
-//Dark Accent
-$dark-accent-300 : hsl(211, 9%, 52%);
+$tertiary-100: #D4ABBC;
+$tertiary-200: #AD95AA;
+$tertiary-300: #888094;
+$tertiary-400: #686A79;
+$tertiary-500: #4E545D;
+$tertiary-600: #393E41;
 
-//Dark Shades
-$dark-shades-300 : hsl(216, 21%, 18%);
+$primary-accents-100: #A5E4FF;
+$primary-accents-200: #3F88C5;
+$primary-accents-300: #0F6CA7;
+$primary-accents-400: #00528A;
+$primary-accents-500: #00396E;
+$primary-accents-600: #002253;
 
-body {
-    margin: 0px;
-    padding: 0px;
+$secondary-accents-100:#44BBA4;
+$secondary-accents-200:#2CA39E;
+$secondary-accents-300:#248C94;
+$secondary-accents-400:#287484;
+$secondary-accents-500:#2E5E6F;
+$secondary-accents-600:#2F4858;
 
-    background-color: $dark-shades-300;
+//Main Page Style
+body{
+    overflow-x: hidden;
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
+//Screen Styling
+header, main{
+
+    transition: 500ms cubic-bezier(.9,0,.25,1.25);
+    
+    &.minimized{
+        height: 0vh;
+        min-height: 0px;
+    }
+}
+//Header - Landing Page
+header{
+    //Alingment
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+    //Sizing
+    width: 100vw;
+    height: 100vh;
+
+    //Colors
+    background: $tertiary-600;
+
+    //Styles for the div inside header
+    >div{
+        //Alingment
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+
+        //Sizing
+        height: 10vh;
+
+        //Margins
+        margin: 1vh;
+
+        //Paddings
+        padding-right: 4vw;
+        padding-bottom: 4vh;
+        padding-left: 4vw;
+        padding-top: 4vh;
+
+        //Colors
+        background-color: $transparent;
+
+        >h1{
+            transition: 500ms cubic-bezier(.9,0,.25,1.25);
+            margin: 2vw;
+            user-select: none;
+            font-family: 'Oxanium';
+            font-size: 8vw;
+            font-weight: 400;
+            color: $secondary-accents-100;
+        }
+        >h2{
+            transition: 500ms cubic-bezier(.9,0,.25,1.25);
+            margin: 2vw;
+            user-select: none;
+            font-family: 'Oxanium';
+            font-size: 3vw;
+            font-weight: 300;
+            color: $secondary-accents-100;
+        }
+    }
+    >svg{
+        transition: 125ms cubic-bezier(0,.90,.60,.1);
+        width: 10vh;
+        border: 4px solid $secondary-accents-100;
+        border-radius: 10vh;
+        background-color: $tertiary-600;
+        fill:$secondary-accents-100;
+        transform: translate(0,12vh);
+        &:hover{
+            transition: 125ms cubic-bezier(0,.90,.60,.1);
+            transform: translate(0,12vh) scale(1.2);
+            background-color: $secondary-accents-100;
+            border-color: $tertiary-500;
+            fill: $tertiary-500;
+            cursor: pointer;
+        }
+    }
+
+    &.minimized{
+        >div{
+            transition: 500ms cubic-bezier(0,.90,.60,.1);
+            background-color: $transparent;
+            border-color: $transparent;
+            >h1{
+                transition: 125ms cubic-bezier(0,.90,.60,.1);
+                color: $transparent;
+            }
+            >h2{
+                transition: 125ms cubic-bezier(0,.90,.60,.1);
+                color: $transparent;
+            }
+        }
+        >svg{
+            transition: 125ms cubic-bezier(0,.90,.60,.1);
+            border-color: $transparent;
+            background-color: $transparent;
+            fill: $transparent;
+        }
+    }
 }
 
-.header-button {
-    transition-duration: 125ms;
-
+main{
     display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+
+    overflow-y: scroll;
+    overflow-x: hidden; 
+
+    background-color: $primary-100;
+    >nav{
+        position: sticky;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+}
+
+.button{
+
+    display:flex;
     justify-content:center;
     align-items:center;
 
-    width: 23vw;
-    height: 6vh;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+    margin-top: 2vh;
 
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    height: 8vh;
+    width: 100%;
 
-    border: 0px solid transparent;
-    border-radius: 3vh;
-
-    background-color: $light-shades-300;
-
-    >.material-icons{
-        user-select: none;
-        color: $dark-shades-300;
-        font-size: 2vw;
-    }
-    >.header-text{
-        user-select: none;
-        color: $dark-shades-300;
-        font-family: 'Oxanium';
-        font-weight: 500;
-        font-size: 2vw;
-    }
-
-    &.compact {
-        width: 6vh;
-    }
+    background-color: $primary-500;
 }
 
-.header-button:hover{
-    background-color: $light-accent-300;
-    cursor:pointer;
-    >.header-text{
-        color: $light-shades-300;
-    }
-    >.material-icons{
-        color: $light-shades-300;
-    }
-}
-
-.filler-container{
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+.top-div, .bottom-div{
+    transition-duration: 0ms;
     display: flex;
-    background-color: purple;
-    width: 69vw;
-    height: 6vh;
-}
+ 
+    width: 100vw;
+    height: 2px;
 
-@media screen and (max-width:460px) {
-    .header-button {
-        >.material-icons{
-            font-size: 2vh;
-        }
-        >.header-text{
-            font-size: 2vh;
-        }
+    background-color: black;
+
+    &.minimized{
+        height: 0vh;
+        min-height: 0px;
     }
-
 }
