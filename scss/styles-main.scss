@@ -10,11 +10,11 @@ $transparent : #00000000;
 
 $background-dark-primary : #2F4858;
 $background-dark-secondary : #40567A;
-$text-dark-primary : #FF6978;
-$text-dark-secondary : #FF83AE;
+$text-dark-primary : #FFE4E4;
+$text-dark-secondary : #D9C0C9;
 
-$background-light-primary : #FF6978;
-$background-light-secondary : #FF83AE;
+$background-light-primary : #FFE4E4;
+$background-light-secondary : #D9C0C9;
 $text-light-primary :#2F4858;
 $text-light-secondary : #40567A;
 
@@ -84,7 +84,7 @@ header{
             color: $text-light-primary;
         }
         >h2{
-            transition: 500ms cubic-bezier(.9,0,.25,1.25);
+            transition: 750ms cubic-bezier(.50,1,.35,1.40);
             margin: 2vw;
             user-select: none;
             font-family: 'Oxanium';
@@ -94,7 +94,7 @@ header{
         }
     }
     >svg{
-        transition: 125ms cubic-bezier(0,.90,.60,.1);
+        transition: 750ms cubic-bezier(.50,1,.35,1.40);
         width: 10vh;
         border: 4px solid $text-light-primary;
         border-radius: 10vh;
@@ -102,8 +102,8 @@ header{
         fill: $text-light-primary;
         transform: translate(0,12vh);
         &:hover{
-            transition: 125ms cubic-bezier(0,.90,.60,.1);
-            transform: translate(0,12vh) scale(1.2);
+            transition: 500ms cubic-bezier(.14,.62,.24,1.48);
+            transform: translate(0,12vh) scale(1.2) rotate(180deg);
             background-color: $background-light-secondary;
             border-color: $text-light-secondary;
             fill: $text-light-secondary;
@@ -141,7 +141,6 @@ main{
     min-height: 100vh;
     height: auto;
 
-    overflow-y: scroll;
     overflow-x: hidden; 
 
     background-color: $background-dark-primary;
@@ -150,33 +149,46 @@ main{
         display:flex;
         justify-content:space-between;
         align-items:center;
-
-        
+        background: $background-light-primary;
     }
 }
 
 .button{
-
+    transition: 125ms;
     display:flex;
     justify-content:center;
     align-items:center;
 
-    margin-right: 2vw;
-    margin-bottom: 2vh;
-    margin-left: 2vw;
-    margin-top: 2vh;
+    margin-right: 1vw;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
+    margin-top: 1vh;
 
     height: 8vh;
     width: 100%;
 
-    background-color: $background-dark-secondary;
-    border: 0px solid $transparent;
+    background-color: $transparent;
+    border: 4px solid $text-light-primary;
     border-radius: 8vh;
 
     >h3{
+        user-select: none;
+        transition: 125ms;
         font-family: 'Oxanium';
         font-size: 2vw;
-        color: $text-dark-primary;
+        color: $text-light-primary;
+    }
+    &:hover{
+        transform: scale(1.05);
+        transition: 125ms;
+        background-color: $background-light-secondary;
+        >h3{
+            transition: 125ms;
+            font-family: 'Oxanium';
+            font-size: 2vw;
+            color: $text-light-secondary;
+        }
+        cursor: pointer;
     }
 }
 
@@ -187,7 +199,7 @@ main{
     width: 100vw;
     height: 2px;
 
-    background-color: $background-dark-primary;
+    background-color: $background-light-primary;
 
     &.minimized{
         height: 0vh;
