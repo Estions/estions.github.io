@@ -7,11 +7,27 @@
 //#hue/#saturation/$lightness/$alpha
 $transparent : hsla(0, 0%, 0%, 0);
 
+$light-primary: #F7B95C;
+$light-secondary: #DB825B;
+
+$dark-primary: #341D34;
+$dark-secondary: #433D5F;
+
+$header-gradient : linear-gradient(to right, $light-secondary, $light-primary);
+
+$main-body-color : $dark-primary;
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
+    //Hide horizontal scroll in case
     overflow-x: hidden;
     &::-webkit-scrollbar{
         width: 0vw;
     }
+
     >.top{
         min-height: 0vh;
         height: 0vh;
@@ -21,22 +37,35 @@ body{
     }
     >.main{
         min-height: 0vh;
-        height:0vh
+        height:0vh;
+        >div{
+            transition-delay: 0ms;
+            transform: translate(0,-128vh);
+            margin-bottom: -128vh;
+            opacity: 0;
+        }
+        
     }
     >.bottom{
         min-height: 2vh;
     }
+
     &.show-main{
         >.top{
             min-height: 2vh;
         }
         >.header{
             min-height: 0vh;
-            height:0vh
+            height:0vh;
+            >div{
+                transition-delay: 0ms;
+                transform: translate(0,-128vh);
+                margin-bottom: -128vh;
+                opacity: 0;
+            }
         }
         >.main{
             min-height: 100vh;
-            max-height: 100vh;
         }
         >.bottom{
             min-height: 0vh;
@@ -45,26 +74,71 @@ body{
     }
 }
 
+.header,.main,.margin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 1vw;
+
+    transition: 750ms cubic-bezier(1,0,.75,1);
+    >div{
+        display: flex;
+        flex-direction: column;
+        transition: 500ms cubic-bezier(0,1.5,.76,1.15);
+        transition-delay: 500ms;
+        opacity: 1;
+        font-family: 'Oxanium';
+    }
+}
+
 .header{
-    transition: 2s;
-    grid-area: _header;
-    background-color: blue;
+    background: $light-secondary;
+    background: $header-gradient;
+    justify-content: space-around;
+    >div{
+        align-items: center;
+        user-select: none;
+        >h1{
+            font-size: 8vw;
+            font-weight: 500;
+            color: $dark-primary;
+            margin: 2vh;
+        }
+        >h2{
+            font-size: 3vw;
+            font-weight: 300;
+            color: $dark-secondary;
+            margin: 1vh;
+        }
+        >svg{
+            transition: 1s cubic-bezier(.49,-0.56,.47,1.5);
+            border: 0.5vw solid $dark-primary;
+            border-radius: 8vw;
+            fill : $dark-primary ;
+            width: 8vw;
+            height: 8vw;
+            &:hover{
+                transition: 1s cubic-bezier(.49,-0.56,.47,1.5);
+                transform: scale(1.2) rotate(360deg);
+            }
+        }
+    }
 }
 
 .main{
-    transition: 2s;
-    grid-area: _main;
-    background-color: brown;
+    background-color: $main-body-color ;
+    >div{
+        margin-right: 1vw;
+    }
+}
+
+.grid-container{
+    display: grid;
+    
 }
 
 .margin{
-    transition: 1s;
     display: flex;
     background-color: black;
-    &.top{
-        grid-area: _top;
-    }
-    &.bottom{
-        grid-area: _bottom;
-    }
 }
