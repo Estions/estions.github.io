@@ -15,11 +15,12 @@ const observer = new IntersectionObserver(function(entries, observer){
     }
 ,{
     root: null,
-    rootMargin: '0px',
+    rootMargin: '4px',
     threshold: 1
 });
 
 function changeScreenMain(){
+    console.log("yeet");
     setTimeout(function(){scrollTo(0,header.scrollHeight)},750);
     body.classList.add("show-main");
 }
