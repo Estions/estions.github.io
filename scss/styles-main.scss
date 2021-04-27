@@ -1,145 +1,153 @@
 // Custom.scss
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap");
 
+$page-min-heigh : 100vh;
 
+$scrollbar-width    : 1vw;
+$scrollbar-color    : #355070;
+$scrollbar-t-color  : #e56b6f;
+$scrollbar-t-h-color: #eaac8b;
 
-//Colors
-//#hue/#saturation/$lightness/$alpha
-$transparent : hsla(0, 0%, 0%, 0);
+$header-height : 8vh;
+$header             : transparent;
+$header-button      : ;
+$header-button-b    : ;
+$header-button-t    : ;
+$header-button-h    : ;
+$header-button-h-b  : ;
+$header-button-h-t  : ;
 
-$light-primary: #d9ed92;
-$light-secondary: #99d98c;
+$background-color   : #b56576;
+$about-me-color     : $background-color;
+$skills-color       : $background-color;
+$projects-color     : $background-color;
+$contacts-color     : $background-color;
 
-$dark-primary: #184e77;
-$dark-secondary: #1a759f;
-
-$header-gradient : linear-gradient(to right, $light-secondary, $light-primary);
-
-$main-body-color : $dark-primary;
-
-html{
-    scroll-behavior:smooth;
-}
+$transparent : transparent;
 
 body{
-    background-color: $dark-primary;
-    //Hide horizontal scroll in case
-    overflow-x: hidden;
+    font-family: 'Oxanium';
+    background: $scrollbar-color;
     &::-webkit-scrollbar{
-        width: 0vw;
+        width: $scrollbar-width;
     }
-
-    >.top,.header,.main,.bottom{
-        transition: 750ms cubic-bezier(1,0,.75,1);
-        >*{
-            transition: inherit;
-        }
+    &::-webkit-scrollbar-track{
+        background: $scrollbar-color;
     }
-
-    >.top, .main{
-        opacity: 0;
-        min-height: 0vh;
-        height: 0vh;}
-    >.header{
-        opacity: 1;
-        min-height: 100vh;
-        height: 100vh;}
-    >.bottom{
-        opacity: 1;
-        min-height: 10vh;
-        height: 10vh;}
-
-    &.show-main{
-        >.bottom,.header{
-            >*{
-                transform: translateY(-100vh);
-                opacity: 0;
-            }
-            min-height: 0vh;
-            height: 0vh;}
-        >.main{
-            opacity: 1;
-            min-height: 100vh;
-            height: 100vh;}
-        >.top{
-            opacity: 1;
-            min-height: 10vh;
-            height: 10vh;}
+    &::-webkit-scrollbar-thumb{
+        border: 0.25vw solid $scrollbar-color;
+        border-radius: 1vw;
+        background: $scrollbar-t-color;
+    }
+    &::-webkit-scrollbar-thumb:hover{
+        background: $scrollbar-t-h-color;
     }
 }
 
-.header,.main,.margin{
+.button{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: $scrollbar-width;
 }
 
 .header{
-    justify-content: center;
+    position: fixed;
+    top: $scrollbar-width;
+    left: 0;
+
+    display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
 
-    background: $light-secondary;
-    background: $header-gradient;
-    >div{
+    flex-direction: row;
+
+    width: 98vw;
+    height: $header-height;
+
+    background: $header-color;
+
+
+    >.button{
+        width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
-        >h1{
-            font-size: 8vw;
-            font-weight: 500;
-            color: $dark-primary;
-            margin: 2vh;
-        }
-        >h2{
-            font-size: 3vw;
-            font-weight: 300;
-            color: $dark-secondary;
-            margin: 1vh;
-        }
-        >svg{
-            transition: 1s cubic-bezier(.49,-0.56,.47,1.5);
-            border: 0.5vw solid $dark-primary;
-            border-radius: 8vw;
-            fill : $dark-primary ;
-            width: 8vw;
-            height: 8vw;
-            &:hover{
-                transition: 1s cubic-bezier(.49,-0.56,.47,1.5);
-                transform: scale(1.2) rotate(360deg);
-            }
+        transition: 0.5s cubic-bezier(.2,.9,.8,1.3);
+
+        background: $header-button;
+
+        border: 4px solid $header-button;
+        border-radius: $header-height;
+
+        color:$scrollbar-t-color;
+
+        font-weight: 500;
+
+        &:hover{
+            transform: scale(1.05,1.15);
+
+            transition: 0.5s cubic-bezier(.2,.9,.8,1.3);
+
+            background: #6d597a;
+
+            border: 4px solid $header-button-h;
+
+            color: $header-button-h;
+
+            cursor: pointer;
+            user-select: none;
         }
     }
 }
 
-.main{
-    background-color: $main-body-color ;
-    >div{
-        margin-right: 1vw;
+.about-me,.skills,.projects,.contacts,.header,.header-hide{
+    max-width: calc(100vw - $scrollbar-width);
+    margin-left: $scrollbar-width;
+}
+
+.about-me,.skills,.projects,.contacts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.header-hide{
+    height: $header-height;
+    background: $background-color;
+}
+
+.about-me{ 
+    padding-top: $header-height;
+    background: $about-me-color;
+}
+
+.skills{ 
+    background: $skills-color;
+}
+
+.projects{
+    background: $projects-color;
+}
+
+.contacts{
+    background: $contacts-color;
+}
+
+@media screen and (max-width : 1024px) {
+    body{
+        &::-webkit-scrollbar{
+            display: none;
+        }
     }
-}
 
-.grid-container{
-    display: grid !important;
-    grid-template-columns: 100vw;
-    grid-template-rows: auto;
-    grid-column-gap: 4vw;
-    grid-template-areas: "_nav"
-                         "_aboutme"
-                         "_skills"
-                         "_projects"
-                         "_contacts";
-}
+    .header{
+        width: 100vw;
+    }
 
-.nav{
-    display: flex;
-    grid-area: _nav;
-    height: 10vh;
-    background: red;
-}
-
-.margin{
-    display: flex;
-    background-color: black;
+    .about-me,.skills,.projects,.contacts,.header,.header-hide{
+        max-width: 100vw;
+        margin-left: 0;
+    }
 }

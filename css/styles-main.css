@@ -1,172 +1,143 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap");
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  background-color: #184e77;
-  overflow-x: hidden;
+  font-family: 'Oxanium';
+  background: #355070;
 }
 
 body::-webkit-scrollbar {
-  width: 0vw;
+  width: 1vw;
 }
 
-body > .top, body .header, body .main, body .bottom {
-  -webkit-transition: 750ms cubic-bezier(1, 0, 0.75, 1);
-  transition: 750ms cubic-bezier(1, 0, 0.75, 1);
+body::-webkit-scrollbar-track {
+  background: #355070;
 }
 
-body > .top > *, body .header > *, body .main > *, body .bottom > * {
-  -webkit-transition: inherit;
-  transition: inherit;
+body::-webkit-scrollbar-thumb {
+  border: 0.25vw solid #355070;
+  border-radius: 1vw;
+  background: #e56b6f;
 }
 
-body > .top, body .main {
-  opacity: 0;
-  min-height: 0vh;
-  height: 0vh;
+body::-webkit-scrollbar-thumb:hover {
+  background: #eaac8b;
 }
 
-body > .header {
-  opacity: 1;
-  min-height: 100vh;
-  height: 100vh;
-}
-
-body > .bottom {
-  opacity: 1;
-  min-height: 10vh;
-  height: 10vh;
-}
-
-body.show-main > .bottom, body.show-main .header {
-  min-height: 0vh;
-  height: 0vh;
-}
-
-body.show-main > .bottom > *, body.show-main .header > * {
-  -webkit-transform: translateY(-100vh);
-          transform: translateY(-100vh);
-  opacity: 0;
-}
-
-body.show-main > .main {
-  opacity: 1;
-  min-height: 100vh;
-  height: 100vh;
-}
-
-body.show-main > .top {
-  opacity: 1;
-  min-height: 10vh;
-  height: 10vh;
-}
-
-.header, .main, .margin {
+.button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1vw;
 }
 
 .header {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  position: fixed;
+  top: 1vw;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: #99d98c;
-  background: -webkit-gradient(linear, left top, right top, from(#99d98c), to(#d9ed92));
-  background: linear-gradient(to right, #99d98c, #d9ed92);
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 98vw;
+  height: 8vh;
+  background: transparent;
 }
 
-.header > div {
+.header > .button {
+  width: 100%;
   height: 100%;
+  -webkit-transition: 0.5s cubic-bezier(0.2, 0.9, 0.8, 1.3);
+  transition: 0.5s cubic-bezier(0.2, 0.9, 0.8, 1.3);
+  background: #355070;
+  border: 4px solid #355070;
+  color: #e56b6f;
+  border-radius: 8vh;
+  font-weight: 500;
+}
+
+.header > .button:hover {
+  -webkit-transform: scale(1.05, 1.15);
+          transform: scale(1.05, 1.15);
+  -webkit-transition: 0.5s cubic-bezier(0.2, 0.9, 0.8, 1.3);
+  transition: 0.5s cubic-bezier(0.2, 0.9, 0.8, 1.3);
+  background: #6d597a;
+  border: 4px solid #eaac8b;
+  color: #eaac8b;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.about-me, .skills, .projects, .contacts, .header, .header-hide {
+  max-width: calc(100vw - $scrollbar-width);
+  margin-left: 1vw;
+}
+
+.about-me, .skills, .projects, .contacts {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.header > div > h1 {
-  font-size: 8vw;
-  font-weight: 500;
-  color: #184e77;
-  margin: 2vh;
+.header-hide {
+  height: 8vh;
+  background: #b56576;
 }
 
-.header > div > h2 {
-  font-size: 3vw;
-  font-weight: 300;
-  color: #1a759f;
-  margin: 1vh;
+.about-me {
+  padding-top: 8vh;
+  background: #b56576;
 }
 
-.header > div > svg {
-  -webkit-transition: 1s cubic-bezier(0.49, -0.56, 0.47, 1.5);
-  transition: 1s cubic-bezier(0.49, -0.56, 0.47, 1.5);
-  border: 0.5vw solid #184e77;
-  border-radius: 8vw;
-  fill: #184e77;
-  width: 8vw;
-  height: 8vw;
+.skills {
+  background: #b56576;
 }
 
-.header > div > svg:hover {
-  -webkit-transition: 1s cubic-bezier(0.49, -0.56, 0.47, 1.5);
-  transition: 1s cubic-bezier(0.49, -0.56, 0.47, 1.5);
-  -webkit-transform: scale(1.2) rotate(360deg);
-          transform: scale(1.2) rotate(360deg);
+.projects {
+  background: #b56576;
 }
 
-.main {
-  background-color: #184e77;
+.contacts {
+  background: #b56576;
 }
 
-.main > div {
-  margin-right: 1vw;
-}
-
-.grid-container {
-  display: -ms-grid !important;
-  display: grid !important;
-  -ms-grid-columns: 100vw;
-      grid-template-columns: 100vw;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  grid-column-gap: 4vw;
-      grid-template-areas: "_nav" "_aboutme" "_skills" "_projects" "_contacts";
-}
-
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: _nav;
-  height: 10vh;
-  background: red;
-}
-
-.margin {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: black;
+@media screen and (max-width: 1024px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  .header {
+    width: 100vw;
+  }
+  .about-me, .skills, .projects, .contacts, .header, .header-hide {
+    max-width: 100vw;
+    margin-left: 0;
+  }
 }
 /*# sourceMappingURL=styles-main.css.map */
