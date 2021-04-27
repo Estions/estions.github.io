@@ -1,46 +1,31 @@
 // Custom.scss
-@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-$page-min-heigh : 100vh;
+$header-h : 10vh;
+$border-r : 2.5vh;
 
-$scrollbar-width    : 1vw;
-$scrollbar-color    : #355070;
-$scrollbar-t-color  : #e56b6f;
-$scrollbar-t-h-color: #eaac8b;
+$preview-g : 80vh;
 
-$header-height : 8vh;
-$header             : transparent;
-$header-button      : ;
-$header-button-b    : ;
-$header-button-t    : ;
-$header-button-h    : ;
-$header-button-h-b  : ;
-$header-button-h-t  : ;
+$background-color : hsl(271, 25%, 15%);
 
-$background-color   : #b56576;
-$about-me-color     : $background-color;
-$skills-color       : $background-color;
-$projects-color     : $background-color;
-$contacts-color     : $background-color;
+$card-color : hsl(30, 100%, 95%);
+$card-color-h : hsl(30, 100%, 90%);
 
-$transparent : transparent;
-
-body{
-    font-family: 'Oxanium';
-    background: $scrollbar-color;
+.body{
+    background: $background-color;
     &::-webkit-scrollbar{
-        width: $scrollbar-width;
+        width: 1vw;
+        background: $background-color;
     }
-    &::-webkit-scrollbar-track{
-        background: $scrollbar-color;
-    }
-    &::-webkit-scrollbar-thumb{
-        border: 0.25vw solid $scrollbar-color;
+    &::-webkit-scrollbar-thumb {
+        background-color: $card-color;
         border-radius: 1vw;
-        background: $scrollbar-t-color;
+        border: 0.25vw solid $background-color;
     }
-    &::-webkit-scrollbar-thumb:hover{
-        background: $scrollbar-t-h-color;
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $background-color;
+        border-radius: 1vw;
+        border: 0.25vw solid $card-color-h;
     }
 }
 
@@ -48,106 +33,87 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: $scrollbar-width;
+    user-select: none;
 }
 
-.header{
-    position: fixed;
-    top: $scrollbar-width;
-    left: 0;
+.grid{
+    display: grid;
+    grid-template-rows: $header-h $preview-g auto ;
+    margin-left: 1.5vw;
+    grid-template-columns: 100%;
+    grid-template-areas:"_nav"
+                        "_preview"
+                        "_main";
+}
 
+.nav{
+    grid-area: _nav;
     display: flex;
-    align-items: center;
-    justify-content: center;
 
-    flex-direction: row;
 
-    width: 98vw;
-    height: $header-height;
-
-    background: $header-color;
-
+    background: transparent;
 
     >.button{
+        transition: 250ms;
+        border: 4px solid $card-color;
+        background: $card-color;
+        color: $background-color;
+
+        font-family: 'B612 Mono';
+        font-size: 2vw;
+        text-align: center;
+
+
+        border-radius: $border-r;
+        margin:1vh;
         width: 100%;
-        height: 100%;
 
-        transition: 0.5s cubic-bezier(.2,.9,.8,1.3);
-
-        background: $header-button;
-
-        border: 4px solid $header-button;
-        border-radius: $header-height;
-
-        color:$scrollbar-t-color;
-
-        font-weight: 500;
 
         &:hover{
-            transform: scale(1.05,1.15);
-
-            transition: 0.5s cubic-bezier(.2,.9,.8,1.3);
-
-            background: #6d597a;
-
-            border: 4px solid $header-button-h;
-
-            color: $header-button-h;
-
-            cursor: pointer;
-            user-select: none;
+            transition: transform 750ms cubic-bezier(.25,.75,.75,1.45), 250ms;
+            border: 4px solid $card-color;
+            background: transparent;
+            color: $card-color;
+            transform: scale(1.025);
         }
     }
 }
 
-.about-me,.skills,.projects,.contacts,.header,.header-hide{
-    max-width: calc(100vw - $scrollbar-width);
-    margin-left: $scrollbar-width;
-}
-
-.about-me,.skills,.projects,.contacts{
+.preview{
+    grid-area: _preview;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    flex-direction: column;
+    user-select: none;
+    width: 100%;
+    background: transparent;
+    >p{
+        font-family: 'B612 Mono';
+        font-size: 4vw;
+        font-weight: 700;
+        color: $card-color;
+
+    }
 }
 
-.header-hide{
-    height: $header-height;
-    background: $background-color;
+.main{
+    grid-area: _main;
+    border-radius: $border-r;
+    width: 100%;
+    height: 100vh;
+    background: $card-color;
+    margin-bottom: 1vw;
 }
 
-.about-me{ 
-    padding-top: $header-height;
-    background: $about-me-color;
-}
 
-.skills{ 
-    background: $skills-color;
-}
-
-.projects{
-    background: $projects-color;
-}
-
-.contacts{
-    background: $contacts-color;
-}
-
-@media screen and (max-width : 1024px) {
-    body{
-        &::-webkit-scrollbar{
-            display: none;
+@media screen and (max-width:768px) {
+    
+    .grid{
+        margin : 0px;
+    }
+    .nav{
+        >.button{
+            font-size: 2vh;
         }
-    }
-
-    .header{
-        width: 100vw;
-    }
-
-    .about-me,.skills,.projects,.contacts,.header,.header-hide{
-        max-width: 100vw;
-        margin-left: 0;
     }
 }
