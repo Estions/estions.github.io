@@ -81,6 +81,7 @@
   color: #fff2e6;
   -webkit-transform: scale(1.025);
           transform: scale(1.025);
+  cursor: pointer;
 }
 
 .preview {
@@ -105,6 +106,7 @@
 }
 
 .preview > p {
+  text-align: center;
   font-family: 'B612 Mono';
   font-size: 4vw;
   font-weight: 700;
@@ -128,6 +130,9 @@
   }
   .nav > .button {
     font-size: 2vh;
+  }
+  .preview > p {
+    font-size: 4vh;
   }
 }
 /*# sourceMappingURL=styles-main.css.map */

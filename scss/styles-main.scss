@@ -75,6 +75,7 @@ $card-color-h : hsl(30, 100%, 90%);
             background: transparent;
             color: $card-color;
             transform: scale(1.025);
+            cursor: pointer;
         }
     }
 }
@@ -88,6 +89,7 @@ $card-color-h : hsl(30, 100%, 90%);
     width: 100%;
     background: transparent;
     >p{
+        text-align: center;
         font-family: 'B612 Mono';
         font-size: 4vw;
         font-weight: 700;
@@ -114,6 +116,11 @@ $card-color-h : hsl(30, 100%, 90%);
     .nav{
         >.button{
             font-size: 2vh;
+        }
+    }
+    .preview{
+        >p{
+            font-size: 4vh;
         }
     }
 }
