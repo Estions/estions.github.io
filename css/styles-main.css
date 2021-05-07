@@ -122,6 +122,8 @@
   height: 100vh;
   background: #fff2e6;
   margin-bottom: 1vw;
+  -webkit-transform: translateX();
+          transform: translateX();
 }
 
 @media screen and (max-width: 768px) {
