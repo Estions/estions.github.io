@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes boxOpening-bot {
+  0% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes boxOpening-top {
+  0% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1.25, 1.25);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes boxShaking {
+  10% {
+    transform: rotate(1deg);
+  }
+  20% {
+    transform: rotate(-2deg);
+  }
+  30% {
+    transform: rotate(3deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(1deg);
+  }
+}
+
+html, body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(135deg, #662b29 0%, #94363a 33%, #b64d46 66%, #cd5e46 100%);
+}
+
+.gift {
+  position: absolute;
+  min-width: 5vw;
+  min-height: 5vw;
+}
+
+#gift-bot {
+  z-index: 100;
+}
+
+#gift-bot.gift-bot {
+  animation: boxShaking 1s infinite;
+}
+
+#gift-top {
+  z-index: 200;
+}
+
+#gift-top.gift-top {
+  pointer-events: all;
+  cursor: pointer;
+  animation: boxShaking 1s infinite;
+}
+
+.hidden {
+  height: 0;
+}
+
+header, footer {
+  position: fixed;
+  width: 33%;
+  height: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: whitesmoke;
+}
+
+header div, footer div {
+  display: flex;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: large;
+}
+
+header {
+  top: 0;
+  left: 0;
+  transition: ease 1s;
+}
+
+header div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+header.hidden {
+  top: -200px;
+}
+
+main {
+  pointer-events: none;
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+main > * {
+  pointer-events: none;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  bottom: 0;
+  right: 0;
+  transition: ease 1s;
+}
+
+footer div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer.hidden {
+  bottom: -200px;
+}
+/*# sourceMappingURL=style-main.css.map */
