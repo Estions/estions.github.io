@@ -61,13 +61,50 @@ html, body{
   }
 
 body{
+    margin: 0;
     font-family: 'Raleway', sans-serif;
     background: linear-gradient(135deg, #662b29 0%, #94363a 33%, #b64d46 66%, #cd5e46 100%);
+    &.wrongDay{
+        background: linear-gradient(90deg, rgba(255,205,178,1) 0%, rgba(255,180,162,1) 10%, rgba(229,152,155,1) 25%, rgba(181,131,141,1) 50%, rgba(109,104,117,1) 100%);
+    }
 }
+
+#wrongDay{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    min-width: 100%;
+    height: 100vh;
+    top: 0;
+    div{
+        display:flex;
+        min-height: 100%;
+        min-width: 5vw;
+        background-color: gray;
+        background: linear-gradient(90deg, rgba(242,233,228,1) 0%, rgba(201,173,167,1) 25%, rgba(154,140,152,1) 50%, rgba(74,78,105,1) 75%, rgba(34,34,59,1) 100%);
+    }
+}
+
+#wrongDay{
+    &.hidden{
+        display: none;
+    }
+}
+
+#rightDay{
+    &.hidden{
+        display: none;
+    }
+}
+
 .gift{
-    position: absolute;
-    min-width: 5vw;
-    min-height: 5vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -256px;
+    margin-left: -256px;
+    min-width: 512px;
+    min-height: 512px;
 }
 
 

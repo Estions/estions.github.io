@@ -11,5 +11,11 @@ if(d < 10) {
 if(d < 24) {
     document.getElementById("rightDay").hidden = true;
     document.getElementById("wrongDay").hidden = false;
+    document.body.classList.add("wrongDay");
+}
+else {
+    Array.from(document.getElementById("wrongDay").children).forEach(item => {
+        item.remove();
+    });
 }
 document.getElementById("date_text").innerHTML = y + " " + m + " " + d ;
