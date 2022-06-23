@@ -8,11 +8,6 @@ if(m < 10) {
 if(d < 10) {
     d = "0"+d;
 }
-if(d < 24) {
-    document.getElementById("rightDay").hidden = true;
-    document.getElementById("wrongDay").hidden = false;
-    document.body.classList.add("wrongDay");
-}
 else {
     Array.from(document.getElementById("wrongDay").children).forEach(item => {
         item.remove();
