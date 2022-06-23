@@ -18,4 +18,3 @@ else {
         item.remove();
     });
 }
-document.getElementById("date_text").innerHTML = y + " " + m + " " + d ;

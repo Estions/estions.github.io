@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+html, body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(135deg, #662b29 0%, #94363a 33%, #b64d46 66%, #cd5e46 100%);
+}
+
+footer {
+  position: fixed;
+  color: whitesmoke;
+  width: 33%;
+  height: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  bottom: 0;
+  right: 0;
+}
+
+footer div {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: large;
+}
+
+main {
+  pointer-events: none;
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+main > * {
+  pointer-events: none;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputWrapper {
+  color: whitesmoke;
+  flex-direction: column;
+}
+
+.inputWrapper > h1 {
+  margin: 4em;
+  font-size: xx-large;
+  animation: moveText 4s;
+  transform: scale(2);
+}
+
+@keyframes moveText {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+#inputField {
+  margin: 4em;
+  max-width: 75ch;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+/*# sourceMappingURL=style-second.css.map */

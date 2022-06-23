@@ -8,7 +8,8 @@
         transform: scale(1.2,1.2);
     }
     100%{
-        transform: scale(1,1);
+        transform: scale(1.2,1.2);
+        transform: translateY(100vh);
     }
 }
 
@@ -21,7 +22,8 @@
         transform: scale(1.25,1.25);
     }
     100%{
-        transform: scale(1,1);
+        transform: scale(1.25,1.25);
+        transform: translateY(-100vh);
     }
 }
 
@@ -55,6 +57,11 @@
     }
 }
 
+@keyframes boxSqueeze {
+    100%{
+        transform: scale(0.75,0.75);
+    }
+}
 html, body{ 
     min-height: 100vh;
     overflow: hidden;
@@ -113,6 +120,12 @@ body{
     &.gift-bot{
         animation: boxShaking 1s infinite;
     }
+    &.gift-prep{
+        animation: boxSqueeze 3s;
+    }
+    &.gift-boom{
+        animation: boxOpening-bot 2s;
+    }
 }
 #gift-top{
     z-index: 200;
@@ -120,7 +133,12 @@ body{
         pointer-events: all;
         cursor: pointer;
         animation: boxShaking 1s infinite;
-
+    }
+    &.gift-prep{
+        animation: boxSqueeze 3s;
+    }
+    &.gift-boom{
+        animation: boxOpening-top 2s;
     }
 }
 
@@ -180,9 +198,13 @@ footer{
     bottom: 0;
     right: 0;
     transition: ease 1s;
+    user-select: none;
     div{
         display: flex;
         justify-content: flex-end;
+        z-index: 200;
+        
+        pointer-events: all;
     }
     &.hidden{
         bottom: -200px;
